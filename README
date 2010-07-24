@@ -1,0 +1,3 @@
+Bookmarklet Code:
+
+javascript:(function(){_en2te_script=document.createElement('script');_en2te_script.type='text/javascript';_en2te_script.src='http://localhost/bm.js?x='+(Math.random());document.documentElement.appendChild(_en2te_script);})();
