@@ -5,16 +5,16 @@ function closeLb() {
 
 function cbfunc(o){
     var data = o.query.results.p;
-    document.getElementById('light').innerHTML = data;
-    document.getElementById('light').innerHTML += "<p><a href='#' onClick='closeLb()'>Close</a></p>";
+    document.getElementById('light').innerHTML = "<b>En2Te</b> meaning for <b>" + sel_txt + "</b>:<br/>";
+    document.getElementById('light').innerHTML += "<p>" + data + "</p>";
+    document.getElementById('light').innerHTML += "<p><a href='#' onClick='closeLb(); return false;'>Close</a></p>";
     document.getElementById('light').style.display='block';
     document.getElementById('fade').style.display='block';
 };
 
 document.body.ondblclick = function() {
     var sel = window.getSelection();
-    var sel_txt = "";
- 
+
     if (sel.anchorNode.nodeType == Node.TEXT_NODE
         && sel.focusNode.nodeType == Node.TEXT_NODE) {
         sel_txt = sel.toString(); 
@@ -27,6 +27,8 @@ document.body.ondblclick = function() {
     yql_script.src = yql_query;
     document.documentElement.appendChild(yql_script);
 };
+
+var sel_txt = "";
 
 var light = document.createElement('div');
 light.id = "light";
