@@ -6,6 +6,8 @@ function cbfunc(o){
 document.body.ondblclick = function() {
     var sel = window.getSelection();
     var sel_txt = "";
+    var rng = sel.getRangeAt(0);
+    alert(rng);
 
     if (sel.anchorNode.nodeType == Node.TEXT_NODE
         && sel.focusNode.nodeType == Node.TEXT_NODE) {
