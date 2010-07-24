@@ -1,14 +1,20 @@
+function closeLb() {
+    document.getElementById('light').style.display = 'none';
+    document.getElementById('fade').style.display = 'none';
+};
+
 function cbfunc(o){
     var data = o.query.results.p;
-    alert(data);
-}
+    document.getElementById('light').innerHTML = data;
+    document.getElementById('light').innerHTML += "<p><a href='#' onClick='closeLb()'>Close</a></p>";
+    document.getElementById('light').style.display='block';
+    document.getElementById('fade').style.display='block';
+};
 
 document.body.ondblclick = function() {
     var sel = window.getSelection();
     var sel_txt = "";
-    var rng = sel.getRangeAt(0);
-    alert(rng);
-
+ 
     if (sel.anchorNode.nodeType == Node.TEXT_NODE
         && sel.focusNode.nodeType == Node.TEXT_NODE) {
         sel_txt = sel.toString(); 
@@ -21,5 +27,38 @@ document.body.ondblclick = function() {
     yql_script.src = yql_query;
     document.documentElement.appendChild(yql_script);
 };
+
+var light = document.createElement('div');
+light.id = "light";
+light.style.display = "none";
+light.style.position = "absolute";
+light.style.top = "25%";
+light.style.left = "25%";
+light.style.width = "50%";
+light.style.height = "50%";
+light.style.padding = "16px";
+light.style.border =  "16px solid orange";
+light.style.backgroundColor = "white";
+light.style.zIndex = "1002";
+light.style.overflow = "auto;";
+light.innerHTML = "Loading, please wait...";
+
+document.documentElement.appendChild(light);
+
+var fade = document.createElement('div');
+fade.id = "fade";
+fade.style.display = "none";
+fade.style.position = "absolute";
+fade.style.top = "0%";
+fade.style.left = "0%";
+fade.style.width = "100%";
+fade.style.height = "100%";
+fade.style.backgroundColor = "black";
+fade.style.zIndex = "1001";
+fade.style.mozOpacity = "0.8";
+fade.style.opacity = ".80";
+fade.style.filter = "alpha(opacity=80)";
+
+document.documentElement.appendChild(fade);
 
 alert('Activated en2te. Double click on a word to pull up meaning in Telugu ');
