@@ -1,3 +1,13 @@
-Bookmarklet Code:
+en2te :
+English to Telugu Dictionary for Web reading 
 
+visit en2te.html
+
+* Drag the en2te badge below to your browser's bookmark toolbar:
+                     (or)
+  Right click on the en2te badge below and select  Add to Favorites  :
+
+* When visiting a Web page to get telugu meaning on double click, simply click the link to enable en2te.
+
+Bookmarklet Code:
 javascript:(function(){_en2te_script=document.createElement('script');_en2te_script.type='text/javascript';_en2te_script.src='http://localhost/bm.js?x='+(Math.random());document.documentElement.appendChild(_en2te_script);})();
